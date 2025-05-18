@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Technical Interests - Nurmuhammad Ibrohimjonov</title>
+  <meta name="description" content="Technical interests of Nurmuhammad Ibrohimjonov including Web Development and Cybersecurity." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+      padding-left: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #2d2d44;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: #ffb703;
+      outline: none;
+    }
+
+    main.interest-container {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 15px;
+    }
+
+    .interest {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      padding: 20px 25px;
+      transition: transform 0.2s ease;
+    }
+
+    .interest:hover,
+    .interest:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .interest img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .interest h2 {
+      color: #2d2d44;
+      margin-bottom: 12px;
+    }
+
+    .interest p {
+      margin-bottom: 12px;
+      color: #444;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Technical Interests</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="technical-interests.html" aria-current="page">Technical Interests</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="interest-container" role="main" aria-label="Technical Interests">
+
+    <article class="interest" tabindex="0" aria-labelledby="webdev-title" aria-describedby="webdev-desc">
+      <img src="1000_F_294370899_CjLy3nMMSkm9FBsIdPvqlQgjiGrTT9kW.jpg" alt="Code on a computer screen representing Web Development" />
+      <h2 id="webdev-title">Web Development</h2>
+      <p id="webdev-desc">Creating modern, accessible, and user-friendly websites is one of my key passions. I enjoy building web applications using only vanilla HTML, CSS, and JavaScript, focusing on clean design and responsive layouts.</p>
+      <p>I follow WCAG accessibility guidelines and incorporate usability principles from Nielsen's heuristics to ensure my sites are easy to use and inclusive for all users.</p>
+    </article>
+
+    <article class="interest" tabindex="0" aria-labelledby="cyber-title" aria-describedby="cyber-desc">
+      <img src="Ethical-Hacking.png" alt="Cybersecurity concept with lock and code" />
+      <h2 id="cyber-title">Cybersecurity & Ethical Hacking</h2>
+      <p id="cyber-desc">Through the TryHackMe platform, I have gained foundational knowledge in networking, operating systems, and penetration testing. I have completed the “Pre Security” path and am currently pursuing the Red Team track.</p>
+      <p>Security is critical in today’s digital world, and I’m fascinated by how vulnerabilities are found and responsibly addressed to protect systems and data.</p>
+    </article>
+
+  </main>
+</body>
+</html>

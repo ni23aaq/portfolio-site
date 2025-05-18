@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Nurmuhammad Ibrohimjonov</title>
+  <meta name="description" content="Portfolio of Nurmuhammad Ibrohimjonov featuring embedded systems and web development projects." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+      padding-left: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #2d2d44;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: #ffb703;
+      outline: none;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section.project {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px 30px;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease;
+    }
+
+    section.project:hover,
+    section.project:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    section.project h2 {
+      color: #2d2d44;
+      margin-bottom: 10px;
+    }
+
+    section.project p {
+      margin-bottom: 15px;
+    }
+
+    button.more-details {
+      padding: 10px 20px;
+      background-color: #2d2d44;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    button.more-details:hover,
+    button.more-details:focus {
+      background-color: #1b1d30;
+      outline: none;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+      padding: 40px 20px;
+    }
+
+    .modal[aria-hidden="false"] {
+      display: block;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 12px;
+      padding: 30px 25px;
+      position: relative;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      transition: color 0.3s ease;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #ffb703;
+      outline: none;
+    }
+
+    .modal-content h3 {
+      margin-bottom: 15px;
+      color: #2d2d44;
+    }
+
+    .modal-content p {
+      line-height: 1.5;
+      color: #444;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      section.project {
+        padding: 20px;
+      }
+
+      .modal-content {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="technical-interests.html">Technical Interests</a></li>
+        <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main" aria-label="Portfolio projects">
+    <section class="project" tabindex="0" aria-labelledby="project1-title" aria-describedby="project1-desc">
+      <h2 id="project1-title">Project 1: Smart Temperature Monitor</h2>
+      <p id="project1-desc">ESP32, RGB LED, and DHT22 sensor project</p>
+      <button class="more-details" aria-controls="modal1" aria-expanded="false" aria-haspopup="dialog" onclick="showDetails('modal1')">More Details</button>
+    </section>
+
+    <section class="project" tabindex="0" aria-labelledby="project2-title" aria-describedby="project2-desc">
+      <h2 id="project2-title">Project 2: GitHub Profile Site</h2>
+      <p id="project2-desc">Personal portfolio built with HTML, CSS, and JS</p>
+      <button class="more-details" aria-controls="modal2" aria-expanded="false" aria-haspopup="dialog" onclick="showDetails('modal2')">More Details</button>
+    </section>
+  </main>
+
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title" aria-hidden="true" tabindex="-1">
+    <div class="modal-content">
+      <button class="close" aria-label="Close modal" onclick="closeModal('modal1')">&times;</button>
+      <h3 id="modal1-title">Smart Temperature Monitor</h3>
+      <p>This project uses an ESP32 microcontroller with a DHT22 sensor to monitor temperature and humidity. The RGB LED changes color based on temperature thresholds. A slide switch allows the user to override the color manually via an interrupt. The system was built and tested using Wokwi. This project demonstrates my understanding of embedded systems, sensor data handling, and interrupt-based control in microcontrollers.</p>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title" aria-hidden="true" tabindex="-1">
+    <div class="modal-content">
+      <button class="close" aria-label="Close modal" onclick="closeModal('modal2')">&times;</button>
+      <h3 id="modal2-title">GitHub Profile Site</h3>
+      <p>This is a personal portfolio website built using only HTML, CSS, and JavaScript without any external frameworks. It includes multiple sections such as About, Technical Interests, and Portfolio. I implemented accessibility standards using the WAVE tool and performed a heuristic usability evaluation based on Nielsen's principles. The development process was version controlled using GitHub with consistent commits and proper branching.</p>
+    </div>
+  </div>
+
+  <script>
+    // Show modal and manage aria-expanded
+    function showDetails(id) {
+      const modal = document.getElementById(id);
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+
+      // Update aria-expanded on button
+      const button = document.querySelector(`[aria-controls="${id}"]`);
+      if(button) button.setAttribute('aria-expanded', 'true');
+
+      // Focus modal for accessibility
+      modal.focus();
+    }
+
+    // Close modal and update aria-expanded
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+
+      const button = document.querySelector(`[aria-controls="${id}"]`);
+      if(button) button.setAttribute('aria-expanded', 'false');
+
+      // Return focus to button
+      if(button) button.focus();
+    }
+
+    // Close modal on clicking outside modal-content
+    window.addEventListener('click', (event) => {
+      document.querySelectorAll('.modal').forEach(modal => {
+        if (event.target === modal) {
+          closeModal(modal.id);
+        }
+      });
+    });
+
+    // Keyboard accessibility: close modal on Escape key
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        document.querySelectorAll('.modal').forEach(modal => {
+          if (modal.style.display === 'block') {
+            closeModal(modal.id);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

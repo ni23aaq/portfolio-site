@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Nurmuhammad Ibrohimjonov</title>
+  <meta name="description" content="About Nurmuhammad Ibrohimjonov, a Computer Science student passionate about software development, embedded systems, and cybersecurity." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fc;
+      color: #191313;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* FIXED: H1 style */
+    header h1 {
+      color: #2d2d44;
+      font-size: 2.5rem;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+      padding-left: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #2d2d44;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: #ffb703;
+      outline: none;
+    }
+
+    main.about-container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .profile-img {
+      display: block;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    h1, h2 {
+      color: #2d2d44;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 30px;
+    }
+
+    ul {
+      list-style: disc inside;
+      margin-top: 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      main.about-container {
+        padding: 20px;
+      }
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1rem;
+    }
+
+    .contact a {
+      color: #2d2d44;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact a:hover,
+    .contact a:focus {
+      color: #ffb703;
+      outline: none;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Me</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="technical-interests.html">Technical Interests</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="about-container" role="main">
+    <img src="photo_2025-05-18_12-30-02.jpg" alt="Photo of Nurmuhammad Ibrohimjonov" class="profile-img" />
+
+    <section aria-labelledby="name-heading">
+      <h2 id="name-heading">Name</h2>
+      <p>Nurmuhammad Ibrohimjonov</p>
+    </section>
+
+    <section aria-labelledby="uni-heading">
+      <h2 id="uni-heading">University & Program</h2>
+      <p>I am currently a second-year student at the University of Hertfordshire, studying BSc (Hons) Computer Science. I am passionate about software development, embedded systems, and cybersecurity.</p>
+    </section>
+
+    <section aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript (Vanilla)</li>
+        <li>ESP32 Microcontroller Projects (Wokwi)</li>
+        <li>Git & GitHub – Version Control</li>
+        <li>Accessibility & Usability Evaluation (WCAG, Nielsen)</li>
+        <li>Basic Linux & Windows Command Line (TryHackMe)</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="certifications-heading">
+      <h2 id="certifications-heading">Certifications</h2>
+      <ul>
+        <li>TryHackMe – Pre Security Learning Path</li>
+        <li>TryHackMe – Red Team & Penetration Testing (in progress)</li>
+        <li>Introduction to Git and GitHub – Coursera</li>
+      </ul>
+    </section>
+
+    <section class="contact" aria-label="Contact Information">
+      <p>Feel free to contact me via <a href="mailto:nurmuhammad@example.com">email</a> or connect on <a href="https://linkedin.com/in/nurmuhammadibrohimjonov" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+    </section>
+  </main>
+</body>
+</html>
